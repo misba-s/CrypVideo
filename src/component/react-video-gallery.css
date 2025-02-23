@@ -1,0 +1,135 @@
+/* Dark Theme for the Page */
+.page-container {
+    background-color: #121212; /* Dark background */
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Video Gallery Title */
+.gallery-title {
+    text-align: center;
+    font-size: 2.2rem; /* Increased font size */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Video Gallery Description */
+.gallery-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #b3b3b3; /* Soft grey for readability */
+    max-width: 800px;
+    margin: 10px auto 30px;
+    line-height: 1.6;
+}
+
+/* Video Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 videos per row */
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Individual Video Item */
+.video {
+    transition: transform 350ms ease;
+    cursor: pointer;
+}
+
+.video:hover {
+    transform: scale(1.08);
+}
+
+.video video {
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+}
+
+/* Video Title */
+.video-title {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Full-screen Modal */
+.model {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+}
+
+.modal-video {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 12px;
+}
+
+.model-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 videos per row on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 video per row on mobile */
+    }
+
+    .modal-video {
+        width: 95%;
+    }
+
+    .gallery-title {
+        font-size: 1.8rem;
+    }
+
+    .gallery-description {
+        font-size: 1rem;
+    }
+}
